@@ -2,7 +2,7 @@ package domain;
 
 import java.util.Objects;
 
-public class Enrollment extends Entity{
+public class Enrollment extends Entity<Long>{
     private Child child;
     private Challenge challenge;
 

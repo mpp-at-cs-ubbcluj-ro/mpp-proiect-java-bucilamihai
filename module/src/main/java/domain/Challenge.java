@@ -2,14 +2,15 @@ package domain;
 
 import java.util.Objects;
 
-public class Challenge extends Entity{
+public class Challenge extends Entity<Long>{
     private String name;
     private String groupAge;
     private Integer numberOfParticipants;
 
-    public Challenge(String name, String groupAge) {
+    public Challenge(String name, String groupAge, Integer numberOfParticipants) {
         this.name = name;
         this.groupAge = groupAge;
+        this.numberOfParticipants = numberOfParticipants;
     }
 
     public String getName() {
@@ -28,8 +29,13 @@ public class Challenge extends Entity{
         this.groupAge = groupAge;
     }
 
+
     public Integer getNumberOfParticipants() {
         return numberOfParticipants;
+    }
+
+    public void setNumberOfParticipants(Integer numberOfParticipants) {
+        this.numberOfParticipants = numberOfParticipants;
     }
 
     public void increaseNumberOfParticipants() {

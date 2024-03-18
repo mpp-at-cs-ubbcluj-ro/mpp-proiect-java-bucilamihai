@@ -2,7 +2,7 @@ package domain;
 
 import java.util.Objects;
 
-public class Child extends Entity{
+public class Child extends Entity<Long>{
     private Long cnp;
     private String name;
     private Integer age;

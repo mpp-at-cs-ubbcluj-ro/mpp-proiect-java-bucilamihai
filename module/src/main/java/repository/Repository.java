@@ -1,13 +1,15 @@
 package repository;
 
+import domain.Entity;
+
 import java.util.Collection;
 
-public interface Repository<T, Tid> {
-    void add(T elem);
-    void delete(T elem);
-    void update(T elem, Tid id);
-    T findById(Tid id);
-    Iterable<T> findAll();
-    Collection<T> getAll();
+public interface Repository<ID, E extends Entity<ID>> {
+    void add(E elem);
+    void delete(E elem);
+    void update(E elem, ID id);
+    E findById(ID id);
+    Iterable<E> findAll();
+    Collection<E> getAll();
 
 }

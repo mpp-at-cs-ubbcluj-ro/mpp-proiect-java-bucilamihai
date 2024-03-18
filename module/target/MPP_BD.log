@@ -1,0 +1,385 @@
+18 Mar 2024 14:34:34,795 INFO  repository.database.OfficeResponsableDBRepository 20 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {} 
+18 Mar 2024 14:34:34,811 TRACE repository.database.OfficeResponsableDBRepository 26 add - Enter adding office responsable OfficeResponsable{username='mihai', password='parola'} 
+18 Mar 2024 14:34:34,813 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 14:34:34,813 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+18 Mar 2024 14:34:34,815 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... null
+18 Mar 2024 14:34:34,817 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+18 Mar 2024 14:34:34,818 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+18 Mar 2024 14:34:34,823 ERROR repository.database.JdbcUtils 41 getNewConnection - java.sql.SQLException: The url cannot be null
+18 Mar 2024 14:34:34,827 TRACE repository.database.JdbcUtils 57 getConnection - Exit
+18 Mar 2024 14:35:57,216 INFO  repository.database.OfficeResponsableDBRepository 20 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {} 
+18 Mar 2024 14:35:57,232 TRACE repository.database.OfficeResponsableDBRepository 26 add - Enter adding office responsable OfficeResponsable{username='mihai', password='parola'} 
+18 Mar 2024 14:35:57,233 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 14:35:57,234 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+18 Mar 2024 14:35:57,235 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... null
+18 Mar 2024 14:35:57,236 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+18 Mar 2024 14:35:57,237 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+18 Mar 2024 14:35:57,245 ERROR repository.database.JdbcUtils 41 getNewConnection - java.sql.SQLException: The url cannot be null
+18 Mar 2024 14:35:57,249 TRACE repository.database.JdbcUtils 57 getConnection - Exit
+18 Mar 2024 14:37:11,670 INFO  repository.database.OfficeResponsableDBRepository 20 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+18 Mar 2024 14:37:11,683 TRACE repository.database.OfficeResponsableDBRepository 26 add - Enter adding office responsable OfficeResponsable{username='mihai', password='parola'} 
+18 Mar 2024 14:37:11,684 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 14:37:11,685 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+18 Mar 2024 14:37:11,685 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+18 Mar 2024 14:37:11,685 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+18 Mar 2024 14:37:11,686 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+18 Mar 2024 14:37:12,128 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 14:37:12,162 TRACE repository.database.OfficeResponsableDBRepository 34 add - added 1 instances 
+18 Mar 2024 14:37:12,163 TRACE repository.database.OfficeResponsableDBRepository 38 add - Exit
+18 Mar 2024 14:39:38,029 INFO  repository.database.OfficeResponsableDBRepository 20 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+18 Mar 2024 14:39:38,043 TRACE repository.database.OfficeResponsableDBRepository 26 add - Enter adding office responsable OfficeResponsable{username='mihai2', password='parola2'} 
+18 Mar 2024 14:39:38,044 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 14:39:38,045 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+18 Mar 2024 14:39:38,045 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+18 Mar 2024 14:39:38,045 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+18 Mar 2024 14:39:38,047 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+18 Mar 2024 14:39:38,497 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 14:39:38,519 TRACE repository.database.OfficeResponsableDBRepository 34 add - added 1 instances 
+18 Mar 2024 14:39:38,520 TRACE repository.database.OfficeResponsableDBRepository 38 add - Exit
+18 Mar 2024 14:43:02,433 INFO  repository.database.OfficeResponsableDBRepository 20 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+18 Mar 2024 14:43:02,445 TRACE repository.database.OfficeResponsableDBRepository 26 add - Enter adding office responsable OfficeResponsable{username='mihai2', password='parola2'} 
+18 Mar 2024 14:43:02,445 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 14:43:02,446 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+18 Mar 2024 14:43:02,446 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+18 Mar 2024 14:43:02,447 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+18 Mar 2024 14:43:02,448 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+18 Mar 2024 14:43:02,906 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 14:43:02,945 TRACE repository.database.OfficeResponsableDBRepository 34 add - added 1 instances 
+18 Mar 2024 14:43:02,946 TRACE repository.database.OfficeResponsableDBRepository 38 add - Exit
+18 Mar 2024 15:11:11,183 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+18 Mar 2024 15:11:11,195 TRACE repository.database.OfficeResponsableDBRepository 30 add - Enter adding office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:11:11,196 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:11:11,196 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+18 Mar 2024 15:11:11,197 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+18 Mar 2024 15:11:11,197 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+18 Mar 2024 15:11:11,198 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+18 Mar 2024 15:11:11,598 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:11:11,625 TRACE repository.database.OfficeResponsableDBRepository 38 add - added 1 instances 
+18 Mar 2024 15:11:11,626 TRACE repository.database.OfficeResponsableDBRepository 42 add - Exit
+18 Mar 2024 15:11:11,627 TRACE repository.database.OfficeResponsableDBRepository 105 findAll - Enter
+18 Mar 2024 15:11:11,628 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:11:11,629 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:11:11,641 TRACE repository.database.OfficeResponsableDBRepository 123 findAll - Exit
+18 Mar 2024 15:11:11,643 TRACE repository.database.OfficeResponsableDBRepository 81 findById - Enter
+18 Mar 2024 15:11:11,644 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:11:11,645 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:11:11,647 TRACE repository.database.OfficeResponsableDBRepository 63 update - Enter updating office responsable OfficeResponsable{username='cristian', password='password'} 
+18 Mar 2024 15:11:11,647 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:11:11,648 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:11:11,657 ERROR repository.database.OfficeResponsableDBRepository 74 update - org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near "username": syntax error)
+18 Mar 2024 15:11:11,657 TRACE repository.database.OfficeResponsableDBRepository 76 update - Exit
+18 Mar 2024 15:11:11,658 TRACE repository.database.OfficeResponsableDBRepository 47 delete - Enter deleting office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:11:11,659 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:11:11,660 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:11:58,358 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+18 Mar 2024 15:11:58,371 TRACE repository.database.OfficeResponsableDBRepository 30 add - Enter adding office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:11:58,371 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:11:58,372 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+18 Mar 2024 15:11:58,372 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+18 Mar 2024 15:11:58,373 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+18 Mar 2024 15:11:58,374 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+18 Mar 2024 15:11:58,839 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:11:58,864 TRACE repository.database.OfficeResponsableDBRepository 38 add - added 1 instances 
+18 Mar 2024 15:11:58,865 TRACE repository.database.OfficeResponsableDBRepository 42 add - Exit
+18 Mar 2024 15:11:58,866 TRACE repository.database.OfficeResponsableDBRepository 105 findAll - Enter
+18 Mar 2024 15:11:58,866 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:11:58,867 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:11:58,876 TRACE repository.database.OfficeResponsableDBRepository 123 findAll - Exit
+18 Mar 2024 15:11:58,880 TRACE repository.database.OfficeResponsableDBRepository 81 findById - Enter
+18 Mar 2024 15:11:58,881 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:11:58,881 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:11:58,883 TRACE repository.database.OfficeResponsableDBRepository 63 update - Enter updating office responsable OfficeResponsable{username='cristian', password='password'} 
+18 Mar 2024 15:11:58,884 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:11:58,885 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:11:58,890 ERROR repository.database.OfficeResponsableDBRepository 74 update - org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near "username": syntax error)
+18 Mar 2024 15:11:58,891 TRACE repository.database.OfficeResponsableDBRepository 76 update - Exit
+18 Mar 2024 15:11:58,891 TRACE repository.database.OfficeResponsableDBRepository 47 delete - Enter deleting office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:11:58,892 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:11:58,892 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:13:02,336 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+18 Mar 2024 15:13:02,350 TRACE repository.database.OfficeResponsableDBRepository 30 add - Enter adding office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:13:02,351 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:13:02,351 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+18 Mar 2024 15:13:02,352 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+18 Mar 2024 15:13:02,353 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+18 Mar 2024 15:13:02,354 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+18 Mar 2024 15:13:02,797 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:13:02,822 TRACE repository.database.OfficeResponsableDBRepository 38 add - added 1 instances 
+18 Mar 2024 15:13:02,822 TRACE repository.database.OfficeResponsableDBRepository 42 add - Exit
+18 Mar 2024 15:13:02,822 TRACE repository.database.OfficeResponsableDBRepository 105 findAll - Enter
+18 Mar 2024 15:13:02,823 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:13:02,823 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:13:02,834 TRACE repository.database.OfficeResponsableDBRepository 123 findAll - Exit
+18 Mar 2024 15:13:02,836 TRACE repository.database.OfficeResponsableDBRepository 81 findById - Enter
+18 Mar 2024 15:13:02,837 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:13:02,838 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:13:02,840 TRACE repository.database.OfficeResponsableDBRepository 63 update - Enter updating office responsable OfficeResponsable{username='cristian', password='password'} 
+18 Mar 2024 15:13:02,841 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:13:02,841 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:13:02,846 ERROR repository.database.OfficeResponsableDBRepository 74 update - org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near "username": syntax error)
+18 Mar 2024 15:13:02,846 TRACE repository.database.OfficeResponsableDBRepository 76 update - Exit
+18 Mar 2024 15:13:02,847 TRACE repository.database.OfficeResponsableDBRepository 81 findById - Enter
+18 Mar 2024 15:13:02,847 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:13:02,847 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:13:02,848 TRACE repository.database.OfficeResponsableDBRepository 47 delete - Enter deleting office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:13:02,850 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:13:02,850 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:13:02,856 TRACE repository.database.OfficeResponsableDBRepository 54 delete - deleted 1 instances 
+18 Mar 2024 15:13:02,857 TRACE repository.database.OfficeResponsableDBRepository 58 delete - Exit
+18 Mar 2024 15:13:02,858 TRACE repository.database.OfficeResponsableDBRepository 105 findAll - Enter
+18 Mar 2024 15:13:02,858 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:13:02,859 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:13:02,861 TRACE repository.database.OfficeResponsableDBRepository 123 findAll - Exit
+18 Mar 2024 15:16:10,527 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+18 Mar 2024 15:16:10,556 TRACE repository.database.OfficeResponsableDBRepository 30 add - Enter adding office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:16:10,557 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:16:10,558 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+18 Mar 2024 15:16:10,560 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+18 Mar 2024 15:16:10,561 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+18 Mar 2024 15:16:10,564 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+18 Mar 2024 15:16:11,108 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:16:11,137 TRACE repository.database.OfficeResponsableDBRepository 38 add - added 1 instances 
+18 Mar 2024 15:16:11,138 TRACE repository.database.OfficeResponsableDBRepository 42 add - Exit
+18 Mar 2024 15:16:11,138 TRACE repository.database.OfficeResponsableDBRepository 105 findAll - Enter
+18 Mar 2024 15:16:11,139 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:16:11,140 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:16:11,152 TRACE repository.database.OfficeResponsableDBRepository 123 findAll - Exit
+18 Mar 2024 15:16:11,155 TRACE repository.database.OfficeResponsableDBRepository 81 findById - Enter
+18 Mar 2024 15:16:11,155 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:16:11,156 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:16:11,159 TRACE repository.database.OfficeResponsableDBRepository 63 update - Enter updating office responsable OfficeResponsable{username='cristian', password='password'} 
+18 Mar 2024 15:16:11,159 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:16:11,160 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:16:11,161 TRACE repository.database.OfficeResponsableDBRepository 76 update - Exit
+18 Mar 2024 15:16:11,162 TRACE repository.database.OfficeResponsableDBRepository 81 findById - Enter
+18 Mar 2024 15:16:11,164 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:16:11,165 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:16:11,167 TRACE repository.database.OfficeResponsableDBRepository 99 findById - Exit
+18 Mar 2024 15:16:11,168 TRACE repository.database.OfficeResponsableDBRepository 47 delete - Enter deleting office responsable null 
+18 Mar 2024 15:16:11,169 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:16:11,169 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:16:42,844 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+18 Mar 2024 15:16:42,857 TRACE repository.database.OfficeResponsableDBRepository 30 add - Enter adding office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:16:42,858 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:16:42,859 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+18 Mar 2024 15:16:42,859 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+18 Mar 2024 15:16:42,860 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+18 Mar 2024 15:16:42,862 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+18 Mar 2024 15:16:43,277 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:16:43,299 TRACE repository.database.OfficeResponsableDBRepository 38 add - added 1 instances 
+18 Mar 2024 15:16:43,300 TRACE repository.database.OfficeResponsableDBRepository 42 add - Exit
+18 Mar 2024 15:16:43,301 TRACE repository.database.OfficeResponsableDBRepository 105 findAll - Enter
+18 Mar 2024 15:16:43,301 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:16:43,302 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:16:43,312 TRACE repository.database.OfficeResponsableDBRepository 123 findAll - Exit
+18 Mar 2024 15:16:43,314 TRACE repository.database.OfficeResponsableDBRepository 81 findById - Enter
+18 Mar 2024 15:16:43,315 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:16:43,316 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:16:43,318 TRACE repository.database.OfficeResponsableDBRepository 63 update - Enter updating office responsable OfficeResponsable{username='cristian', password='password'} 
+18 Mar 2024 15:16:43,319 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:16:43,320 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:16:43,321 TRACE repository.database.OfficeResponsableDBRepository 76 update - Exit
+18 Mar 2024 15:16:43,321 TRACE repository.database.OfficeResponsableDBRepository 81 findById - Enter
+18 Mar 2024 15:16:43,322 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:16:43,322 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:16:43,324 TRACE repository.database.OfficeResponsableDBRepository 47 delete - Enter deleting office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:16:43,325 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:16:43,327 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:16:43,334 TRACE repository.database.OfficeResponsableDBRepository 54 delete - deleted 1 instances 
+18 Mar 2024 15:16:43,335 TRACE repository.database.OfficeResponsableDBRepository 58 delete - Exit
+18 Mar 2024 15:16:43,336 TRACE repository.database.OfficeResponsableDBRepository 105 findAll - Enter
+18 Mar 2024 15:16:43,336 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:16:43,338 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:16:43,339 TRACE repository.database.OfficeResponsableDBRepository 123 findAll - Exit
+18 Mar 2024 15:17:44,627 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+18 Mar 2024 15:17:44,641 TRACE repository.database.OfficeResponsableDBRepository 30 add - Enter adding office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:17:44,643 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:17:44,643 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+18 Mar 2024 15:17:44,644 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+18 Mar 2024 15:17:44,645 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+18 Mar 2024 15:17:44,646 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+18 Mar 2024 15:17:45,114 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:17:45,148 TRACE repository.database.OfficeResponsableDBRepository 38 add - added 1 instances 
+18 Mar 2024 15:17:45,149 TRACE repository.database.OfficeResponsableDBRepository 42 add - Exit
+18 Mar 2024 15:17:45,150 TRACE repository.database.OfficeResponsableDBRepository 104 findAll - Enter
+18 Mar 2024 15:17:45,151 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:17:45,153 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:17:45,168 TRACE repository.database.OfficeResponsableDBRepository 122 findAll - Exit
+18 Mar 2024 15:17:45,172 TRACE repository.database.OfficeResponsableDBRepository 80 findById - Enter
+18 Mar 2024 15:17:45,174 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:17:45,174 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:17:45,176 TRACE repository.database.OfficeResponsableDBRepository 63 update - Enter updating office responsable OfficeResponsable{username='cristian', password='password'} 
+18 Mar 2024 15:17:45,176 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:17:45,177 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:17:45,178 TRACE repository.database.OfficeResponsableDBRepository 75 update - Exit
+18 Mar 2024 15:17:45,178 TRACE repository.database.OfficeResponsableDBRepository 80 findById - Enter
+18 Mar 2024 15:17:45,179 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:17:45,179 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:17:45,180 TRACE repository.database.OfficeResponsableDBRepository 98 findById - Exit
+18 Mar 2024 15:17:45,181 TRACE repository.database.OfficeResponsableDBRepository 47 delete - Enter deleting office responsable null 
+18 Mar 2024 15:17:45,182 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:17:45,183 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:17:56,964 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+18 Mar 2024 15:17:56,982 TRACE repository.database.OfficeResponsableDBRepository 30 add - Enter adding office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:17:56,983 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:17:56,984 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+18 Mar 2024 15:17:56,985 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+18 Mar 2024 15:17:56,985 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+18 Mar 2024 15:17:56,986 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+18 Mar 2024 15:17:57,417 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:17:57,448 TRACE repository.database.OfficeResponsableDBRepository 38 add - added 1 instances 
+18 Mar 2024 15:17:57,449 TRACE repository.database.OfficeResponsableDBRepository 42 add - Exit
+18 Mar 2024 15:17:57,450 TRACE repository.database.OfficeResponsableDBRepository 104 findAll - Enter
+18 Mar 2024 15:17:57,451 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:17:57,452 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:17:57,467 TRACE repository.database.OfficeResponsableDBRepository 122 findAll - Exit
+18 Mar 2024 15:17:57,471 TRACE repository.database.OfficeResponsableDBRepository 80 findById - Enter
+18 Mar 2024 15:17:57,472 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:17:57,473 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:17:57,476 TRACE repository.database.OfficeResponsableDBRepository 63 update - Enter updating office responsable OfficeResponsable{username='cristian', password='password'} 
+18 Mar 2024 15:17:57,477 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:17:57,479 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:17:57,480 TRACE repository.database.OfficeResponsableDBRepository 75 update - Exit
+18 Mar 2024 15:17:57,481 TRACE repository.database.OfficeResponsableDBRepository 80 findById - Enter
+18 Mar 2024 15:17:57,481 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:17:57,482 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:17:57,483 TRACE repository.database.OfficeResponsableDBRepository 47 delete - Enter deleting office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:17:57,484 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:17:57,484 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:17:57,493 TRACE repository.database.OfficeResponsableDBRepository 54 delete - deleted 1 instances 
+18 Mar 2024 15:17:57,494 TRACE repository.database.OfficeResponsableDBRepository 58 delete - Exit
+18 Mar 2024 15:17:57,495 TRACE repository.database.OfficeResponsableDBRepository 104 findAll - Enter
+18 Mar 2024 15:17:57,495 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:17:57,496 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:17:57,498 TRACE repository.database.OfficeResponsableDBRepository 122 findAll - Exit
+18 Mar 2024 15:18:42,920 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+18 Mar 2024 15:18:42,935 TRACE repository.database.OfficeResponsableDBRepository 30 add - Enter adding office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:18:42,936 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:18:42,937 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+18 Mar 2024 15:18:42,937 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+18 Mar 2024 15:18:42,938 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+18 Mar 2024 15:18:42,938 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+18 Mar 2024 15:18:43,386 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:18:43,414 TRACE repository.database.OfficeResponsableDBRepository 38 add - added 1 instances 
+18 Mar 2024 15:18:43,416 TRACE repository.database.OfficeResponsableDBRepository 42 add - Exit
+18 Mar 2024 15:18:43,416 TRACE repository.database.OfficeResponsableDBRepository 106 findAll - Enter
+18 Mar 2024 15:18:43,417 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:18:43,418 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:18:43,437 TRACE repository.database.OfficeResponsableDBRepository 124 findAll - Exit
+18 Mar 2024 15:18:43,441 TRACE repository.database.OfficeResponsableDBRepository 82 findById - Enter
+18 Mar 2024 15:18:43,442 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:18:43,443 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:18:43,446 TRACE repository.database.OfficeResponsableDBRepository 63 update - Enter updating office responsable OfficeResponsable{username='cristian', password='password'} 
+18 Mar 2024 15:18:43,447 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:18:43,448 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:18:43,457 TRACE repository.database.OfficeResponsableDBRepository 73 update - updated 1 instances 
+18 Mar 2024 15:18:43,458 TRACE repository.database.OfficeResponsableDBRepository 77 update - Exit
+18 Mar 2024 15:18:43,459 TRACE repository.database.OfficeResponsableDBRepository 82 findById - Enter
+18 Mar 2024 15:18:43,461 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:18:43,462 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:18:43,464 TRACE repository.database.OfficeResponsableDBRepository 100 findById - Exit
+18 Mar 2024 15:18:43,465 TRACE repository.database.OfficeResponsableDBRepository 47 delete - Enter deleting office responsable null 
+18 Mar 2024 15:18:43,466 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:18:43,467 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:18:50,320 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+18 Mar 2024 15:18:50,332 TRACE repository.database.OfficeResponsableDBRepository 30 add - Enter adding office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:18:50,333 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:18:50,333 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+18 Mar 2024 15:18:50,334 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+18 Mar 2024 15:18:50,334 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+18 Mar 2024 15:18:50,335 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+18 Mar 2024 15:18:50,748 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:18:50,772 TRACE repository.database.OfficeResponsableDBRepository 38 add - added 1 instances 
+18 Mar 2024 15:18:50,772 TRACE repository.database.OfficeResponsableDBRepository 42 add - Exit
+18 Mar 2024 15:18:50,773 TRACE repository.database.OfficeResponsableDBRepository 106 findAll - Enter
+18 Mar 2024 15:18:50,774 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:18:50,775 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:18:50,787 TRACE repository.database.OfficeResponsableDBRepository 124 findAll - Exit
+18 Mar 2024 15:18:50,790 TRACE repository.database.OfficeResponsableDBRepository 82 findById - Enter
+18 Mar 2024 15:18:50,791 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:18:50,792 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:18:50,794 TRACE repository.database.OfficeResponsableDBRepository 63 update - Enter updating office responsable OfficeResponsable{username='cristian', password='password'} 
+18 Mar 2024 15:18:50,795 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:18:50,796 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:18:50,797 TRACE repository.database.OfficeResponsableDBRepository 73 update - updated 1 instances 
+18 Mar 2024 15:18:50,797 TRACE repository.database.OfficeResponsableDBRepository 77 update - Exit
+18 Mar 2024 15:18:50,797 TRACE repository.database.OfficeResponsableDBRepository 82 findById - Enter
+18 Mar 2024 15:18:50,798 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:18:50,798 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:18:50,799 TRACE repository.database.OfficeResponsableDBRepository 47 delete - Enter deleting office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:18:50,800 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:18:50,800 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:18:50,808 TRACE repository.database.OfficeResponsableDBRepository 54 delete - deleted 1 instances 
+18 Mar 2024 15:18:50,809 TRACE repository.database.OfficeResponsableDBRepository 58 delete - Exit
+18 Mar 2024 15:18:50,810 TRACE repository.database.OfficeResponsableDBRepository 106 findAll - Enter
+18 Mar 2024 15:18:50,811 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:18:50,812 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:18:50,813 TRACE repository.database.OfficeResponsableDBRepository 124 findAll - Exit
+18 Mar 2024 15:21:27,367 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+18 Mar 2024 15:21:27,386 TRACE repository.database.OfficeResponsableDBRepository 30 add - Enter adding office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:21:27,387 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:21:27,387 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+18 Mar 2024 15:21:27,388 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+18 Mar 2024 15:21:27,389 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+18 Mar 2024 15:21:27,391 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+18 Mar 2024 15:21:27,877 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:21:27,906 TRACE repository.database.OfficeResponsableDBRepository 38 add - added 1 instances 
+18 Mar 2024 15:21:27,907 TRACE repository.database.OfficeResponsableDBRepository 42 add - Exit
+18 Mar 2024 15:21:27,908 TRACE repository.database.OfficeResponsableDBRepository 106 findAll - Enter
+18 Mar 2024 15:21:27,909 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:21:27,910 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:21:27,923 TRACE repository.database.OfficeResponsableDBRepository 124 findAll - Exit
+18 Mar 2024 15:21:27,926 TRACE repository.database.OfficeResponsableDBRepository 82 findById - Enter
+18 Mar 2024 15:21:27,927 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:21:27,928 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:21:27,930 TRACE repository.database.OfficeResponsableDBRepository 63 update - Enter updating office responsable OfficeResponsable{username='cristian', password='password'} 
+18 Mar 2024 15:21:27,932 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:21:27,932 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:21:27,934 TRACE repository.database.OfficeResponsableDBRepository 73 update - updated 1 instances 
+18 Mar 2024 15:21:27,935 TRACE repository.database.OfficeResponsableDBRepository 77 update - Exit
+18 Mar 2024 15:21:27,936 TRACE repository.database.OfficeResponsableDBRepository 82 findById - Enter
+18 Mar 2024 15:21:27,937 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:21:27,939 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:21:27,940 TRACE repository.database.OfficeResponsableDBRepository 47 delete - Enter deleting office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:21:27,942 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:21:27,942 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:21:27,951 TRACE repository.database.OfficeResponsableDBRepository 54 delete - deleted 1 instances 
+18 Mar 2024 15:21:27,952 TRACE repository.database.OfficeResponsableDBRepository 58 delete - Exit
+18 Mar 2024 15:21:27,953 TRACE repository.database.OfficeResponsableDBRepository 106 findAll - Enter
+18 Mar 2024 15:21:27,954 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:21:27,955 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:21:27,958 TRACE repository.database.OfficeResponsableDBRepository 124 findAll - Exit
+18 Mar 2024 15:21:44,116 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+18 Mar 2024 15:21:44,130 TRACE repository.database.OfficeResponsableDBRepository 30 add - Enter adding office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:21:44,131 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:21:44,132 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+18 Mar 2024 15:21:44,132 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+18 Mar 2024 15:21:44,132 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+18 Mar 2024 15:21:44,133 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+18 Mar 2024 15:21:44,527 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:21:44,552 TRACE repository.database.OfficeResponsableDBRepository 38 add - added 1 instances 
+18 Mar 2024 15:21:44,552 TRACE repository.database.OfficeResponsableDBRepository 42 add - Exit
+18 Mar 2024 15:21:44,553 TRACE repository.database.OfficeResponsableDBRepository 106 findAll - Enter
+18 Mar 2024 15:21:44,553 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:21:44,553 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:21:44,563 TRACE repository.database.OfficeResponsableDBRepository 124 findAll - Exit
+18 Mar 2024 15:21:44,564 TRACE repository.database.OfficeResponsableDBRepository 82 findById - Enter
+18 Mar 2024 15:21:44,565 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:21:44,565 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:21:44,567 TRACE repository.database.OfficeResponsableDBRepository 63 update - Enter updating office responsable OfficeResponsable{username='cristiii', password='password'} 
+18 Mar 2024 15:21:44,568 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:21:44,568 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:21:44,575 TRACE repository.database.OfficeResponsableDBRepository 73 update - updated 1 instances 
+18 Mar 2024 15:21:44,576 TRACE repository.database.OfficeResponsableDBRepository 77 update - Exit
+18 Mar 2024 15:21:44,576 TRACE repository.database.OfficeResponsableDBRepository 82 findById - Enter
+18 Mar 2024 15:21:44,576 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:21:44,577 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:21:44,578 TRACE repository.database.OfficeResponsableDBRepository 47 delete - Enter deleting office responsable OfficeResponsable{username='test', password='test'} 
+18 Mar 2024 15:21:44,578 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:21:44,579 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:21:44,585 TRACE repository.database.OfficeResponsableDBRepository 54 delete - deleted 1 instances 
+18 Mar 2024 15:21:44,586 TRACE repository.database.OfficeResponsableDBRepository 58 delete - Exit
+18 Mar 2024 15:21:44,586 TRACE repository.database.OfficeResponsableDBRepository 106 findAll - Enter
+18 Mar 2024 15:21:44,587 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+18 Mar 2024 15:21:44,587 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@27eedb64)
+18 Mar 2024 15:21:44,589 TRACE repository.database.OfficeResponsableDBRepository 124 findAll - Exit

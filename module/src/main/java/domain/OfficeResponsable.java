@@ -2,7 +2,7 @@ package domain;
 
 import java.util.Objects;
 
-public class OfficeResponsable extends Entity{
+public class OfficeResponsable extends Entity<Long>{
     private String username;
     private String password;
 
