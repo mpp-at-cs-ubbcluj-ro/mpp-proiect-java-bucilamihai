@@ -19,7 +19,7 @@ public class JdbcUtils {
         jdbcProps=props;
     }
 
-    private  Connection instance=null;
+    private Connection instance=null;
 
     private Connection getNewConnection(){
         logger.traceEntry();

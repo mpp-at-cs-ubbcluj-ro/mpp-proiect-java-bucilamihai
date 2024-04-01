@@ -30,7 +30,7 @@ public class ChildDBRepository implements ChildRepository {
         logger.traceEntry("adding child {} ", elem);
         Connection connection = dbUtils.getConnection();
         try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "INSERT INTO child (cnp, name, age) " +
+                "INSERT INTO children (cnp, name, age) " +
                         "VALUES (?, ?, ?)")) {
             preparedStatement.setLong(1, elem.getCnp());
             preparedStatement.setString(2, elem.getName());
@@ -132,5 +132,35 @@ public class ChildDBRepository implements ChildRepository {
     @Override
     public Collection<Child> getAll() {
         return StreamSupport.stream(findAll().spliterator(), false).toList();
+    }
+
+    @Override
+    public Collection<Child> getChildrenByChallengeNameAndGroupAge(String challengeName, String groupAge) {
+        logger.traceEntry();
+        Connection connection = dbUtils.getConnection();
+        List<Child> childList = new ArrayList<>();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(
+                "SELECT * FROM children Cld " +
+                        "INNER JOIN enrollments E ON E.child_id = Cld.id " +
+                        "INNER JOIN challenges Clg ON Clg.id = E.challenge_id " +
+                        "WHERE Clg.name = ? and Clg.groupAge = ?")) {
+            preparedStatement.setString(1, challengeName);
+            preparedStatement.setString(2, groupAge);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()) {
+                Long id = resultSet.getLong(1);
+                Long cnp = resultSet.getLong(2);
+                String name = resultSet.getString(3);
+                int age = resultSet.getInt(4);
+                Child child = new Child(cnp, name, age);
+                child.setId(id);
+                childList.add(child);
+            }
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        logger.traceExit();
+        return childList;
     }
 }

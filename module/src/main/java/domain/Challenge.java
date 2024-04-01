@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Challenge extends Entity<Long>{
@@ -62,5 +63,12 @@ public class Challenge extends Entity<Long>{
                 ", groupAge='" + groupAge + '\'' +
                 ", numberOfParticipants=" + numberOfParticipants +
                 '}';
+    }
+
+    public boolean matchAge(int age) {
+        List<String> parts = List.of(groupAge.split("-"));
+        int lowerBound = Integer.parseInt(parts.get(0));
+        int upperBound = Integer.parseInt(parts.get(1));
+        return lowerBound <= age && age <= upperBound;
     }
 }
