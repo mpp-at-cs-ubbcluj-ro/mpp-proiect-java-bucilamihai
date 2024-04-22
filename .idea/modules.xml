@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/module.iml" filepath="$PROJECT_DIR$/module.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/module.main.iml" filepath="$PROJECT_DIR$/.idea/modules/module.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/module.test.iml" filepath="$PROJECT_DIR$/.idea/modules/module.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/mpp-proiect-java-bucilamihai.iml" filepath="$PROJECT_DIR$/.idea/mpp-proiect-java-bucilamihai.iml" />
     </modules>
   </component>
 </project>

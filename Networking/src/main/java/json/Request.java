@@ -14,7 +14,6 @@ public class Request {
     private ChallengeDTO challenge;
     private ChildDTO child;
     private String challengeName;
-    private ChallengeDTO[] challenges;
 
     public Request(){}
     public RequestType getType() {
@@ -57,37 +56,4 @@ public class Request {
     public void setChallengeName(String challengeName) {
         this.challengeName = challengeName;
     }
-
-
-    public ChallengeDTO[] getChallenges() {
-        return challenges;
-    }
-
-
-//
-//    public MessageDTO getMessage() {
-//        return message;
-//    }
-//
-//    public void setMessage(MessageDTO messageDTO) {
-//        this.message = messageDTO;
-//    }
-//
-//    public UserDTO[] getFriends() {
-//        return friends;
-//    }
-//
-//    public void setFriends(UserDTO[] friends) {
-//        this.friends = friends;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "Request{" +
-//                "type=" + type +
-//                ", user=" + user +
-//                ", messageDTO=" + message +
-//                ", friends=" + Arrays.toString(friends) +
-//                '}';
-//    }
 }

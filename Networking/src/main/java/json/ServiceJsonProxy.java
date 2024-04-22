@@ -1,5 +1,5 @@
 package json;
-import com.google.gson.Gson;
+import com.google.gson.*;
 import domain.Challenge;
 import domain.Child;
 import domain.OfficeResponsable;
@@ -14,11 +14,26 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.lang.reflect.Type;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+
+import java.io.*;
+import java.lang.reflect.Type;
+import java.net.Socket;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -35,10 +50,14 @@ public class ServiceJsonProxy implements Service {
 
     private BlockingQueue<Response> qresponses;
     private volatile boolean finished;
+
     public ServiceJsonProxy(String host, int port) {
         this.host = host;
         this.port = port;
-        qresponses = new LinkedBlockingQueue<Response>();
+        gsonFormatter = new GsonBuilder()
+                .registerTypeAdapter(RequestType.class, new EnumOrdinalTypeAdapter<>(RequestType.class))
+                .create();
+        qresponses = new LinkedBlockingQueue<>();
     }
 
     @Override
@@ -125,7 +144,7 @@ public class ServiceJsonProxy implements Service {
     }
 
     private Response readResponse() {
-       Response response = null;
+        Response response = null;
         try{
             response = qresponses.take();
         } catch (InterruptedException e) {
@@ -133,9 +152,9 @@ public class ServiceJsonProxy implements Service {
         }
         return response;
     }
+
     private void initializeConnection() {
         try {
-            gsonFormatter = new Gson();
             connection = new Socket(host,port);
             output = new PrintWriter(connection.getOutputStream());
             output.flush();
@@ -146,6 +165,7 @@ public class ServiceJsonProxy implements Service {
             e.printStackTrace();
         }
     }
+
     private void startReader(){
         Thread tw=new Thread(new ReaderThread());
         tw.start();
@@ -186,6 +206,20 @@ public class ServiceJsonProxy implements Service {
                     System.out.println("Reading error "+e);
                 }
             }
+        }
+    }
+
+    public class EnumOrdinalTypeAdapter<E extends Enum<E>> implements JsonSerializer<E> {
+
+        private final Class<E> eClass;
+
+        public EnumOrdinalTypeAdapter(Class<E> eClass) {
+            this.eClass = eClass;
+        }
+
+        @Override
+        public JsonElement serialize(E src, Type typeOfSrc, JsonSerializationContext context) {
+            return new JsonPrimitive(src.ordinal());
         }
     }
 }
