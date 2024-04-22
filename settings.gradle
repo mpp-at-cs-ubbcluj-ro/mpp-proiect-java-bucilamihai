@@ -1,0 +1,9 @@
+rootProject.name = 'mpp-proiect-java-bucilamihai'
+include 'Model'
+include 'Persistence'
+include 'App'
+include 'Server'
+include 'Client'
+include 'Networking'
+include 'Services'
+

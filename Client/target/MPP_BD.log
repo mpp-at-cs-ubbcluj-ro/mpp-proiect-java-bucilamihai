@@ -1,0 +1,84 @@
+04 Apr 2024 23:42:16,199 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {} 
+04 Apr 2024 23:42:16,209 INFO  repository.database.ChallengeDBRepository 25 <init> - Initializing repository.database.ChallengeDBRepository with properties: {} 
+04 Apr 2024 23:42:16,212 INFO  repository.database.ChildDBRepository 25 <init> - Initializing repository.database.ChildDBRepository with properties: {} 
+04 Apr 2024 23:42:16,215 INFO  repository.database.EnrollmentDBRepository 27 <init> - Initializing repository.database.EnrollmentDBRepository with properties: {} 
+04 Apr 2024 23:42:44,322 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+04 Apr 2024 23:42:44,334 INFO  repository.database.ChallengeDBRepository 25 <init> - Initializing repository.database.ChallengeDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+04 Apr 2024 23:42:44,338 INFO  repository.database.ChildDBRepository 25 <init> - Initializing repository.database.ChildDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+04 Apr 2024 23:42:44,339 INFO  repository.database.EnrollmentDBRepository 27 <init> - Initializing repository.database.EnrollmentDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+04 Apr 2024 23:42:53,574 TRACE repository.database.OfficeResponsableDBRepository 106 findAll - Enter
+04 Apr 2024 23:42:53,574 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+04 Apr 2024 23:42:53,575 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+04 Apr 2024 23:42:53,575 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+04 Apr 2024 23:42:53,576 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+04 Apr 2024 23:42:53,577 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+04 Apr 2024 23:42:53,948 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@1438f2e9)
+04 Apr 2024 23:42:53,963 TRACE repository.database.OfficeResponsableDBRepository 124 findAll - Exit
+04 Apr 2024 23:42:54,102 TRACE repository.database.ChallengeDBRepository 109 findAll - Enter
+04 Apr 2024 23:42:54,103 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+04 Apr 2024 23:42:54,103 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+04 Apr 2024 23:42:54,104 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+04 Apr 2024 23:42:54,105 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+04 Apr 2024 23:42:54,105 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+04 Apr 2024 23:42:54,108 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@67476761)
+04 Apr 2024 23:42:54,112 TRACE repository.database.ChallengeDBRepository 128 findAll - Exit
+04 Apr 2024 23:43:01,404 TRACE repository.database.ChildDBRepository 139 getChildrenByChallengeNameAndGroupAge - Enter
+04 Apr 2024 23:43:01,405 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+04 Apr 2024 23:43:01,405 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+04 Apr 2024 23:43:01,406 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+04 Apr 2024 23:43:01,406 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+04 Apr 2024 23:43:01,406 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+04 Apr 2024 23:43:01,408 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3d8605df)
+04 Apr 2024 23:43:01,410 TRACE repository.database.ChildDBRepository 163 getChildrenByChallengeNameAndGroupAge - Exit
+05 Apr 2024 19:28:03,311 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+05 Apr 2024 19:28:03,328 INFO  repository.database.ChallengeDBRepository 25 <init> - Initializing repository.database.ChallengeDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+05 Apr 2024 19:28:03,333 INFO  repository.database.ChildDBRepository 25 <init> - Initializing repository.database.ChildDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+05 Apr 2024 19:28:03,338 INFO  repository.database.EnrollmentDBRepository 27 <init> - Initializing repository.database.EnrollmentDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+08 Apr 2024 17:52:57,846 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+08 Apr 2024 17:52:57,862 INFO  repository.database.ChallengeDBRepository 25 <init> - Initializing repository.database.ChallengeDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+08 Apr 2024 17:52:57,867 INFO  repository.database.ChildDBRepository 25 <init> - Initializing repository.database.ChildDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+08 Apr 2024 17:52:57,871 INFO  repository.database.EnrollmentDBRepository 27 <init> - Initializing repository.database.EnrollmentDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+08 Apr 2024 17:53:07,052 TRACE repository.database.OfficeResponsableDBRepository 106 findAll - Enter
+08 Apr 2024 17:53:07,053 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+08 Apr 2024 17:53:07,054 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+08 Apr 2024 17:53:07,054 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+08 Apr 2024 17:53:07,055 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+08 Apr 2024 17:53:07,056 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+08 Apr 2024 17:53:07,532 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@1e8b86f6)
+08 Apr 2024 17:53:07,550 TRACE repository.database.OfficeResponsableDBRepository 124 findAll - Exit
+08 Apr 2024 17:53:19,389 TRACE repository.database.OfficeResponsableDBRepository 106 findAll - Enter
+08 Apr 2024 17:53:19,390 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+08 Apr 2024 17:53:19,391 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@1e8b86f6)
+08 Apr 2024 17:53:19,392 TRACE repository.database.OfficeResponsableDBRepository 124 findAll - Exit
+08 Apr 2024 17:53:19,632 TRACE repository.database.ChallengeDBRepository 109 findAll - Enter
+08 Apr 2024 17:53:19,634 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+08 Apr 2024 17:53:19,635 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+08 Apr 2024 17:53:19,637 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+08 Apr 2024 17:53:19,638 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+08 Apr 2024 17:53:19,639 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+08 Apr 2024 17:53:19,645 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@1f36086)
+08 Apr 2024 17:53:19,652 TRACE repository.database.ChallengeDBRepository 128 findAll - Exit
+08 Apr 2024 17:53:33,959 TRACE repository.database.ChildDBRepository 139 getChildrenByChallengeNameAndGroupAge - Enter
+08 Apr 2024 17:53:33,960 TRACE repository.database.JdbcUtils 48 getConnection - Enter
+08 Apr 2024 17:53:33,961 TRACE repository.database.JdbcUtils 25 getNewConnection - Enter
+08 Apr 2024 17:53:33,961 INFO  repository.database.JdbcUtils 30 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db
+08 Apr 2024 17:53:33,962 INFO  repository.database.JdbcUtils 31 getNewConnection - user: null
+08 Apr 2024 17:53:33,962 INFO  repository.database.JdbcUtils 32 getNewConnection - pass: null
+08 Apr 2024 17:53:33,966 TRACE repository.database.JdbcUtils 57 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@25d9ec97)
+08 Apr 2024 17:53:33,969 TRACE repository.database.ChildDBRepository 163 getChildrenByChallengeNameAndGroupAge - Exit
+09 Apr 2024 00:04:00,102 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+09 Apr 2024 00:04:00,112 INFO  repository.database.ChallengeDBRepository 25 <init> - Initializing repository.database.ChallengeDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+09 Apr 2024 00:04:00,115 INFO  repository.database.ChildDBRepository 25 <init> - Initializing repository.database.ChildDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+09 Apr 2024 00:04:00,118 INFO  repository.database.EnrollmentDBRepository 27 <init> - Initializing repository.database.EnrollmentDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+09 Apr 2024 00:04:41,675 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+09 Apr 2024 00:04:41,684 INFO  repository.database.ChallengeDBRepository 25 <init> - Initializing repository.database.ChallengeDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+09 Apr 2024 00:04:41,686 INFO  repository.database.ChildDBRepository 25 <init> - Initializing repository.database.ChildDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+09 Apr 2024 00:04:41,689 INFO  repository.database.EnrollmentDBRepository 27 <init> - Initializing repository.database.EnrollmentDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+09 Apr 2024 08:24:57,383 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+09 Apr 2024 08:24:57,397 INFO  repository.database.ChallengeDBRepository 25 <init> - Initializing repository.database.ChallengeDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+09 Apr 2024 08:24:57,400 INFO  repository.database.ChildDBRepository 25 <init> - Initializing repository.database.ChildDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+09 Apr 2024 08:24:57,404 INFO  repository.database.EnrollmentDBRepository 27 <init> - Initializing repository.database.EnrollmentDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+09 Apr 2024 08:25:02,808 INFO  repository.database.OfficeResponsableDBRepository 24 <init> - Initializing repository.database.OfficeResponsableDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+09 Apr 2024 08:25:02,821 INFO  repository.database.ChallengeDBRepository 25 <init> - Initializing repository.database.ChallengeDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+09 Apr 2024 08:25:02,824 INFO  repository.database.ChildDBRepository 25 <init> - Initializing repository.database.ChildDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
+09 Apr 2024 08:25:02,827 INFO  repository.database.EnrollmentDBRepository 27 <init> - Initializing repository.database.EnrollmentDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\bmcmi\IdeaProjects\databases\children_contest.db} 
