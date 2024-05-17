@@ -4,6 +4,10 @@ import domain.Challenge;
 import domain.OfficeResponsable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+import repository.HibernateUtils;
 import repository.interfaces.ChallengeRepository;
 
 import java.sql.Connection;
@@ -28,105 +32,67 @@ public class ChallengeDBRepository implements ChallengeRepository {
     @Override
     public void add(Challenge elem) {
         logger.traceEntry("adding challenge {} ", elem);
-        Connection connection = dbUtils.getConnection();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "INSERT INTO challenges (name, groupAge, numberOfParticipants) " +
-                        "VALUES (?, ?, ?)")) {
-            preparedStatement.setString(1, elem.getName());
-            preparedStatement.setString(2, elem.getGroupAge());
-            preparedStatement.setInt(3, elem.getNumberOfParticipants());
-            int result = preparedStatement.executeUpdate();
-            logger.trace("added {} instances ", result);
-        } catch (SQLException e) {
-            logger.error(e);
-        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        session.persist(elem);
+        transaction.commit();
+        session.close();
         logger.traceExit();
     }
 
     @Override
     public void delete(Challenge elem) {
         logger.traceEntry("deleting challenge {} ", elem);
-        Connection connection = dbUtils.getConnection();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "DELETE FROM challenges " +
-                        "WHERE ID = ?")) {
-            preparedStatement.setLong(1, elem.getId());
-            int result = preparedStatement.executeUpdate();
-            logger.trace("deleted {} instances ", result);
-        } catch (SQLException e) {
-            logger.error(e);
-        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        session.remove(elem);
+        transaction.commit();
+        session.close();
         logger.traceExit();
     }
 
     @Override
     public void update(Challenge elem, Long id) {
         logger.traceEntry("updating challenge {} ", elem);
-        Connection connection = dbUtils.getConnection();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "UPDATE challenges " +
-                        "SET name = ?, groupAge = ?, numberOfParticipants = ? " +
-                        "WHERE id = ?")) {
-            preparedStatement.setString(1, elem.getName());
-            preparedStatement.setString(2, elem.getGroupAge());
-            preparedStatement.setInt(3, elem.getNumberOfParticipants());
-            preparedStatement.setLong(4, id);
-            int result = preparedStatement.executeUpdate();
-            logger.trace("updated {} instances ", result);
-        } catch (SQLException e) {
-            logger.error(e);
-        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        session.merge(elem);
+        transaction.commit();
+        session.close();
         logger.traceExit();
     }
 
     @Override
     public Challenge findById(Long id) {
         logger.traceEntry();
-        Connection connection = dbUtils.getConnection();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "SELECT * FROM challenges " +
-                        "WHERE id = ?")) {
-            preparedStatement.setLong(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if(resultSet.next())
-            {
-                String name = resultSet.getString(2);
-                String groupAge = resultSet.getString(3);
-                int numberOfParticipants = resultSet.getInt(4);
-                Challenge challenge = new Challenge(name, groupAge, numberOfParticipants);
-                challenge.setId(id);
-                return challenge;
-            }
-        } catch (SQLException e) {
-            logger.error(e);
-        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Challenge challenge = session.get(Challenge.class, id);
+        session.close();
         logger.traceExit();
-        return null;
+        return challenge;
+    }
+
+    public Challenge findByName(String name) {
+        logger.traceEntry();
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Query<Challenge> query = session.createQuery(
+                "FROM Challenge WHERE name = :name", Challenge.class
+        );
+        query.setParameter("name", name);
+        logger.traceExit();
+        session.close();
+        return query.uniqueResult();
     }
 
     @Override
     public Iterable<Challenge> findAll() {
         logger.traceEntry();
-        Connection connection = dbUtils.getConnection();
-        List<Challenge> challengeList = new ArrayList<>();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "SELECT * FROM challenges")) {
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while(resultSet.next())
-            {
-                Long id = resultSet.getLong(1);
-                String name = resultSet.getString(2);
-                String groupAge = resultSet.getString(3);
-                int numberOfParticipants = resultSet.getInt(4);
-                Challenge challenge = new Challenge(name, groupAge, numberOfParticipants);
-                challenge.setId(id);
-                challengeList.add(challenge);
-            }
-        } catch (SQLException e) {
-            logger.error(e);
-        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Query<Challenge> query = session.createQuery("FROM Challenge", Challenge.class);
+        List<Challenge> challenges = query.list();
+        session.close();
         logger.traceExit();
-        return challengeList;
+        return challenges;
     }
 
     @Override
@@ -137,24 +103,17 @@ public class ChallengeDBRepository implements ChallengeRepository {
     @Override
     public Challenge getChallengeMatched(int age, String challengeName) {
         logger.traceEntry();
-        Connection connection = dbUtils.getConnection();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "SELECT * FROM challenges " +
-                        "WHERE name = ?")) {
-            preparedStatement.setString(1, challengeName);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while(resultSet.next())
-            {
-                Long id = resultSet.getLong(1);
-                String groupAge = resultSet.getString(3);
-                int numberOfParticipants = resultSet.getInt(4);
-                Challenge challenge = new Challenge(challengeName, groupAge, numberOfParticipants);
-                challenge.setId(id);
-                if(challenge.matchAge(age))
-                    return challenge;
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Query<Challenge> query = session.createQuery(
+                "FROM Challenge WHERE name = :challengeName", Challenge.class
+        );
+        query.setParameter("challengeName", challengeName);
+        List<Challenge> challenges = query.list();
+        session.close();
+        for (Challenge challenge : challenges) {
+            if (challenge.matchAge(age)) {
+                return challenge;
             }
-        } catch (SQLException e) {
-            logger.error(e);
         }
         logger.traceExit();
         return null;

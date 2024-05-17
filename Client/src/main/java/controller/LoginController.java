@@ -37,10 +37,10 @@ public class LoginController {
         String password = this.password.getText();
         loggedOfficeResponsable = new OfficeResponsable(username, password);
         try {
+            initOfficeView();
             officeService.login(loggedOfficeResponsable, officeController);
             this.username.clear();
             this.password.clear();
-            initOfficeView();
         }
         catch (ServiceException e){
             Alert alert = new Alert(Alert.AlertType.WARNING);

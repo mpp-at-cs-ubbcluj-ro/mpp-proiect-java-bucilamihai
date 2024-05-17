@@ -1,16 +1,29 @@
 package domain;
 
-import java.util.Objects;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
+import java.util.Objects;
+import java.util.Set;
+
+@jakarta.persistence.Entity
+@Table(name = "CHILDREN")
 public class Child extends Entity<Long>{
     private Long cnp;
     private String name;
     private Integer age;
 
+    @OneToMany(mappedBy = "child")
+    private Set<Enrollment> enrollments;
+
     public Child(Long cnp, String name, Integer age) {
         this.cnp = cnp;
         this.name = name;
         this.age = age;
+    }
+
+    public Child() {
+
     }
 
     public Long getCnp() {
@@ -35,6 +48,14 @@ public class Child extends Entity<Long>{
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public Set<Enrollment> getEnrollments() {
+        return enrollments;
+    }
+
+    public void setEnrollments(Set<Enrollment> enrollments) {
+        this.enrollments = enrollments;
     }
 
     @Override

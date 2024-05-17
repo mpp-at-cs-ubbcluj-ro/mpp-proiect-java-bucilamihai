@@ -3,6 +3,10 @@ package repository.database;
 import domain.OfficeResponsable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+import repository.HibernateUtils;
 import repository.interfaces.OfficeResponsableRepository;
 
 import java.sql.Connection;
@@ -28,101 +32,55 @@ public class OfficeResponsableDBRepository implements OfficeResponsableRepositor
     @Override
     public void add(OfficeResponsable elem) {
         logger.traceEntry("adding office responsable {} ", elem);
-        Connection connection = dbUtils.getConnection();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "INSERT INTO office_responsables (username, password) " +
-                        "VALUES (?, ?)")) {
-            preparedStatement.setString(1, elem.getUsername());
-            preparedStatement.setString(2, elem.getPassword());
-            int result = preparedStatement.executeUpdate();
-            logger.trace("added {} instances ", result);
-        } catch (SQLException e) {
-            logger.error(e);
-        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        session.persist(elem);
+        transaction.commit();
+        session.close();
         logger.traceExit();
     }
 
     @Override
     public void delete(OfficeResponsable elem) {
         logger.traceEntry("deleting office responsable {} ", elem);
-        Connection connection = dbUtils.getConnection();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "DELETE FROM office_responsables " +
-                        "WHERE ID = ?")) {
-            preparedStatement.setLong(1, elem.getId());
-            int result = preparedStatement.executeUpdate();
-            logger.trace("deleted {} instances ", result);
-        } catch (SQLException e) {
-            logger.error(e);
-        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        session.remove(elem);
+        transaction.commit();
+        session.close();
         logger.traceExit();
     }
 
     @Override
     public void update(OfficeResponsable elem, Long id) {
         logger.traceEntry("updating office responsable {} ", elem);
-        Connection connection = dbUtils.getConnection();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "UPDATE office_responsables " +
-                        "SET username = ?, password = ? " +
-                        "WHERE id = ?")) {
-            preparedStatement.setString(1, elem.getUsername());
-            preparedStatement.setString(2, elem.getPassword());
-            preparedStatement.setLong(3, id);
-            int result = preparedStatement.executeUpdate();
-            logger.trace("updated {} instances ", result);
-        } catch (SQLException e) {
-            logger.error(e);
-        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        session.merge(elem);
+        transaction.commit();
+        session.close();
         logger.traceExit();
     }
 
     @Override
     public OfficeResponsable findById(Long id) {
         logger.traceEntry();
-        Connection connection = dbUtils.getConnection();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "SELECT * FROM office_responsables " +
-                        "WHERE id = ?")) {
-            preparedStatement.setLong(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if(resultSet.next())
-            {
-                String username = resultSet.getString(2);
-                String password = resultSet.getString(3);
-                OfficeResponsable officeResponsable = new OfficeResponsable(username, password);
-                officeResponsable.setId(id);
-                return officeResponsable;
-            }
-        } catch (SQLException e) {
-            logger.error(e);
-        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        OfficeResponsable officeResponsable = session.get(OfficeResponsable.class, id);
+        session.close();
         logger.traceExit();
-        return null;
+        return officeResponsable;
     }
 
     @Override
     public Iterable<OfficeResponsable> findAll() {
         logger.traceEntry();
-        Connection connection = dbUtils.getConnection();
-        List<OfficeResponsable> officeResponsableList = new ArrayList<>();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "SELECT * FROM office_responsables")) {
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while(resultSet.next())
-            {
-                Long id = resultSet.getLong(1);
-                String username = resultSet.getString(2);
-                String password = resultSet.getString(3);
-                OfficeResponsable officeResponsable = new OfficeResponsable(username, password);
-                officeResponsable.setId(id);
-                officeResponsableList.add(officeResponsable);
-            }
-        } catch (SQLException e) {
-            logger.error(e);
-        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Query<OfficeResponsable> query = session.createQuery("FROM OfficeResponsable", OfficeResponsable.class);
+        List<OfficeResponsable> officeResponsables = query.list();
+        session.close();
         logger.traceExit();
-        return officeResponsableList;
+        return officeResponsables;
     }
 
     @Override
@@ -132,24 +90,14 @@ public class OfficeResponsableDBRepository implements OfficeResponsableRepositor
 
     public OfficeResponsable findByUsername(String username) {
         logger.traceEntry();
-        Connection connection = dbUtils.getConnection();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "SELECT * FROM office_responsables " +
-                        "WHERE username = ?")) {
-            preparedStatement.setString(1, username);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if(resultSet.next())
-            {
-                Long id = resultSet.getLong(1);
-                String password = resultSet.getString(3);
-                OfficeResponsable officeResponsable = new OfficeResponsable(username, password);
-                officeResponsable.setId(id);
-                return officeResponsable;
-            }
-        } catch (SQLException e) {
-            logger.error(e);
-        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Query<OfficeResponsable> query = session.createQuery(
+                "FROM OfficeResponsable WHERE username = :username", OfficeResponsable.class
+        );
+        query.setParameter("username", username);
+        OfficeResponsable officeResponsable = query.uniqueResult();
+        session.close();
         logger.traceExit();
-        return null;
+        return officeResponsable;
     }
 }

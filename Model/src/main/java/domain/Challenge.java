@@ -1,8 +1,12 @@
 package domain;
 
+import jakarta.persistence.Table;
+
 import java.util.List;
 import java.util.Objects;
 
+@jakarta.persistence.Entity
+@Table(name = "CHALLENGES")
 public class Challenge extends Entity<Long>{
     private String name;
     private String groupAge;
@@ -12,6 +16,10 @@ public class Challenge extends Entity<Long>{
         this.name = name;
         this.groupAge = groupAge;
         this.numberOfParticipants = numberOfParticipants;
+    }
+
+    public Challenge() {
+
     }
 
     public String getName() {

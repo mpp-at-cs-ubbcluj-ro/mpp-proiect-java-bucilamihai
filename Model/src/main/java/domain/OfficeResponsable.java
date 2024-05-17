@@ -1,7 +1,11 @@
 package domain;
 
+import jakarta.persistence.Table;
+
 import java.util.Objects;
 
+@jakarta.persistence.Entity
+@Table(name = "OFFICE_RESPONSABLES")
 public class OfficeResponsable extends Entity<Long>{
     private String username;
     private String password;
@@ -9,6 +13,10 @@ public class OfficeResponsable extends Entity<Long>{
     public OfficeResponsable(String username, String password) {
         this.username = username;
         this.password = password;
+    }
+
+    public OfficeResponsable() {
+
     }
 
     public String getUsername() {

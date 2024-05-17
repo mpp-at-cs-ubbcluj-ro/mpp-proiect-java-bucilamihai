@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="dataSourceStorageLocal" created-in="IU-233.11799.241">
-    <data-source name="ChildrenContest" uuid="c0c31e66-6889-450c-bfda-9ee4cc059893">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
-      <schema-mapping />
-    </data-source>
-  </component>
-</project>

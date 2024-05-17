@@ -1,9 +1,14 @@
 package repository.database;
 
+import domain.Challenge;
 import domain.Child;
 import domain.OfficeResponsable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+import repository.HibernateUtils;
 import repository.interfaces.ChildRepository;
 
 import java.sql.Connection;
@@ -28,105 +33,55 @@ public class ChildDBRepository implements ChildRepository {
     @Override
     public void add(Child elem) {
         logger.traceEntry("adding child {} ", elem);
-        Connection connection = dbUtils.getConnection();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "INSERT INTO children (cnp, name, age) " +
-                        "VALUES (?, ?, ?)")) {
-            preparedStatement.setLong(1, elem.getCnp());
-            preparedStatement.setString(2, elem.getName());
-            preparedStatement.setInt(3, elem.getAge());
-            int result = preparedStatement.executeUpdate();
-            logger.trace("added {} instances ", result);
-        } catch (SQLException e) {
-            logger.error(e);
-        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        session.persist(elem);
+        transaction.commit();
+        session.close();
         logger.traceExit();
     }
 
     @Override
     public void delete(Child elem) {
         logger.traceEntry("deleting child {} ", elem);
-        Connection connection = dbUtils.getConnection();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "DELETE FROM child " +
-                        "WHERE ID = ?")) {
-            preparedStatement.setLong(1, elem.getId());
-            int result = preparedStatement.executeUpdate();
-            logger.trace("deleted {} instances ", result);
-        } catch (SQLException e) {
-            logger.error(e);
-        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        session.remove(elem);
+        transaction.commit();
+        session.close();
         logger.traceExit();
     }
 
     @Override
     public void update(Child elem, Long id) {
         logger.traceEntry("updating child {} ", elem);
-        Connection connection = dbUtils.getConnection();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "UPDATE child " +
-                        "SET cnp = ?, name = ?, age = ? " +
-                        "WHERE id = ?")) {
-            preparedStatement.setLong(1, elem.getCnp());
-            preparedStatement.setString(2, elem.getName());
-            preparedStatement.setInt(3, elem.getAge());
-            preparedStatement.setLong(4, id);
-            int result = preparedStatement.executeUpdate();
-            logger.trace("updated {} instances ", result);
-        } catch (SQLException e) {
-            logger.error(e);
-        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        session.merge(elem);
+        transaction.commit();
+        session.close();
         logger.traceExit();
     }
 
     @Override
     public Child findById(Long id) {
         logger.traceEntry();
-        Connection connection = dbUtils.getConnection();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "SELECT * FROM children " +
-                        "WHERE id = ?")) {
-            preparedStatement.setLong(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if(resultSet.next())
-            {
-                Long cnp = resultSet.getLong(2);
-                String name = resultSet.getString(3);
-                int age = resultSet.getInt(4);
-                Child child = new Child(cnp, name, age);
-                child.setId(id);
-                return child;
-            }
-        } catch (SQLException e) {
-            logger.error(e);
-        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Child child = session.get(Child.class, id);
+        session.close();
         logger.traceExit();
-        return null;
+        return child;
     }
 
     @Override
     public Iterable<Child> findAll() {
         logger.traceEntry();
-        Connection connection = dbUtils.getConnection();
-        List<Child> childList = new ArrayList<>();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "SELECT * FROM children")) {
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while(resultSet.next())
-            {
-                Long id = resultSet.getLong(1);
-                Long cnp = resultSet.getLong(2);
-                String name = resultSet.getString(3);
-                int age = resultSet.getInt(4);
-                Child child = new Child(cnp, name, age);
-                child.setId(id);
-                childList.add(child);
-            }
-        } catch (SQLException e) {
-            logger.error(e);
-        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Query<Child> query = session.createQuery("FROM Child", Child.class);
+        List<Child> children = query.list();
+        session.close();
         logger.traceExit();
-        return childList;
+        return children;
     }
 
     @Override
@@ -137,55 +92,32 @@ public class ChildDBRepository implements ChildRepository {
     @Override
     public Collection<Child> getChildrenByChallengeNameAndGroupAge(String challengeName, String groupAge) {
         logger.traceEntry();
-        Connection connection = dbUtils.getConnection();
-        List<Child> childList = new ArrayList<>();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "SELECT * FROM children Cld " +
-                        "INNER JOIN enrollments E ON E.child_id = Cld.id " +
-                        "INNER JOIN challenges Clg ON Clg.id = E.challenge_id " +
-                        "WHERE Clg.name = ? and Clg.groupAge = ?")) {
-            preparedStatement.setString(1, challengeName);
-            preparedStatement.setString(2, groupAge);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while(resultSet.next()) {
-                Long id = resultSet.getLong(1);
-                Long cnp = resultSet.getLong(2);
-                String name = resultSet.getString(3);
-                int age = resultSet.getInt(4);
-                Child child = new Child(cnp, name, age);
-                child.setId(id);
-                childList.add(child);
-            }
-        }
-        catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Query<Child> query = session.createQuery(
+                "SELECT c FROM Child c " +
+                        "JOIN c.enrollments e " +
+                        "JOIN e.challenge ch " +
+                        "WHERE ch.name = :challengeName AND ch.groupAge = :groupAge", Child.class
+        );
+        query.setParameter("challengeName", challengeName);
+        query.setParameter("groupAge", groupAge);
+        List<Child> children = query.list();
+        session.close();
         logger.traceExit();
-        return childList;
+        return children;
     }
 
     @Override
     public Child getChildByCnp(Long cnp) {
         logger.traceEntry();
-        Connection connection = dbUtils.getConnection();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "SELECT * FROM children " +
-                        "WHERE cnp = ?")) {
-            preparedStatement.setLong(1, cnp);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if(resultSet.next())
-            {
-                Long id = resultSet.getLong(1);
-                String name = resultSet.getString(3);
-                int age = resultSet.getInt(4);
-                Child child = new Child(cnp, name, age);
-                child.setId(id);
-                return child;
-            }
-        } catch (SQLException e) {
-            logger.error(e);
-        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Query<Child> query = session.createQuery(
+                "FROM Child WHERE cnp = :cnp", Child.class
+        );
+        query.setParameter("cnp", cnp);
+        Child child = query.uniqueResult();
+        session.close();
         logger.traceExit();
-        return null;
+        return child;
     }
 }

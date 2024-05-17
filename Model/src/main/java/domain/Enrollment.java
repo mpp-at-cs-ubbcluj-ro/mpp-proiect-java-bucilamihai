@@ -1,14 +1,28 @@
 package domain;
 
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
 import java.util.Objects;
 
+@jakarta.persistence.Entity
+@Table(name = "ENROLLMENTS")
 public class Enrollment extends Entity<Long>{
+    @ManyToOne
+    @JoinColumn(name = "child_id")
     private Child child;
+    @ManyToOne
+    @JoinColumn(name = "challenge_id")
     private Challenge challenge;
 
     public Enrollment(Child child, Challenge challenge) {
         this.child = child;
         this.challenge = challenge;
+    }
+
+    public Enrollment() {
+
     }
 
     public Child getChild() {
