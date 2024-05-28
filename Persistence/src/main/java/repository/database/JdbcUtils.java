@@ -2,21 +2,35 @@ package repository.database;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-
+@Component
 public class JdbcUtils {
-
+    private String jdbcUrl;
+    private String jdbcUser;
+    private String jdbcPass;
     private Properties jdbcProps;
 
     private static final Logger logger= LogManager.getLogger();
 
     public JdbcUtils(Properties props){
         jdbcProps=props;
+    }
+
+    @Autowired
+    public JdbcUtils(@Value("${jdbc.driver}") String jdbcUrl,
+                     @Value("${jdbc.user}") String jdbcUser,
+                     @Value("${jdbc.pass}") String jdbcPass) {
+        this.jdbcUrl = jdbcUrl;
+        this.jdbcUser = jdbcUser;
+        this.jdbcPass = jdbcPass;
     }
 
     private Connection instance=null;

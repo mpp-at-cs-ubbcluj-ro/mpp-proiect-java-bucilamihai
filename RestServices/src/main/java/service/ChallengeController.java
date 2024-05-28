@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import repository.interfaces.ChallengeRepository;
 
 import java.util.List;
+import java.util.Objects;
 
 @CrossOrigin
 @RestController
@@ -21,7 +22,7 @@ public class ChallengeController {
     private ChallengeRepository challengeRepository;
 
     @RequestMapping("/greeting")
-    public  String greeting(@RequestParam(value="name", defaultValue="World") String name) {
+    public String greeting(@RequestParam(value="name", defaultValue="World") String name) {
         return String.format(template, name);
     }
 
@@ -45,27 +46,34 @@ public class ChallengeController {
     public Challenge create(@RequestBody Challenge challenge) {
         System.out.println("Creating challenge ...");
         challengeRepository.add(challenge);
-        return challenge;
+        return challengeRepository.findByName(challenge.getName());
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public Challenge update(@RequestBody Challenge challenge) {
+    public Challenge update(@PathVariable Long id, @RequestBody Challenge challenge) {
         System.out.println("Updating challenge ...");
+        if(!Objects.equals(id, challenge.getId()))
+            throw new ServiceException("Update challenge exception!");
         challengeRepository.update(challenge, challenge.getId());
         return challenge;
     }
 
-    @RequestMapping(value = "/{name}", method = RequestMethod.DELETE)
-    public ResponseEntity<?> delete(@PathVariable String name) {
-        System.out.println("Deleting challenge ..." + name);
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<?> delete(@PathVariable Long id) {
+        System.out.println("Deleting challenge ..." + id);
         try {
-            Challenge challenge = challengeRepository.findByName(name);
-            challengeRepository.delete(challenge);
+            challengeRepository.delete(challengeRepository.findById(id));
             return new ResponseEntity<Challenge>(HttpStatus.OK);
         }
         catch (Exception e) {
             System.out.println("Delete challenge exception!");
             return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
+    }
+
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public String challengeError(Exception e) {
+        return e.getMessage();
     }
 }

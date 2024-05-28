@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Persistence/mpp-proiect-java-bucilamihai.Persistence.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Persistence/mpp-proiect-java-bucilamihai.Persistence.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RestServices/mpp-proiect-java-bucilamihai.RestServices.main.iml" filepath="$PROJECT_DIR$/.idea/modules/RestServices/mpp-proiect-java-bucilamihai.RestServices.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Server/mpp-proiect-java-bucilamihai.Server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Server/mpp-proiect-java-bucilamihai.Server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-client.iml" filepath="$PROJECT_DIR$/web-client.iml" />
     </modules>
   </component>
 </project>

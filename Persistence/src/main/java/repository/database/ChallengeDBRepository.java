@@ -1,13 +1,10 @@
 package repository.database;
 
 import domain.Challenge;
-import domain.OfficeResponsable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import org.hibernate.query.Query;
-import repository.HibernateUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import repository.interfaces.ChallengeRepository;
 
 import java.sql.Connection;
@@ -20,79 +17,134 @@ import java.util.List;
 import java.util.Properties;
 import java.util.stream.StreamSupport;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class ChallengeDBRepository implements ChallengeRepository {
     private JdbcUtils dbUtils;
 
     private static final Logger logger = LogManager.getLogger();
 
+
     public ChallengeDBRepository(Properties props) {
         logger.info("Initializing repository.database.ChallengeDBRepository with properties: {} ", props);
         dbUtils=new JdbcUtils(props);
     }
+
+    @Autowired
+    public ChallengeDBRepository(@Value("${jdbc.url}") String url,
+                                 @Value("${jdbc.user}") String user,
+                                 @Value("${jdbc.pass}") String pass) {
+        Properties props = new Properties();
+        props.setProperty("jdbc.url", url);
+        props.setProperty("jdbc.user", user);
+        props.setProperty("jdbc.pass", pass);
+        logger.info("Initializing repository.database.ChallengeDBRepository with properties: {} ", props);
+        dbUtils = new JdbcUtils(props);
+    }
+
     @Override
     public void add(Challenge elem) {
         logger.traceEntry("adding challenge {} ", elem);
-        Session session = HibernateUtils.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
-        session.persist(elem);
-        transaction.commit();
-        session.close();
+        Connection connection = dbUtils.getConnection();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(
+                "INSERT INTO challenges (name, groupAge, numberOfParticipants) " +
+                        "VALUES (?, ?, ?)")) {
+            preparedStatement.setString(1, elem.getName());
+            preparedStatement.setString(2, elem.getGroupAge());
+            preparedStatement.setInt(3, elem.getNumberOfParticipants());
+            int result = preparedStatement.executeUpdate();
+            logger.trace("added {} instances ", result);
+        } catch (SQLException e) {
+            logger.error(e);
+        }
         logger.traceExit();
     }
 
     @Override
     public void delete(Challenge elem) {
         logger.traceEntry("deleting challenge {} ", elem);
-        Session session = HibernateUtils.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
-        session.remove(elem);
-        transaction.commit();
-        session.close();
+        Connection connection = dbUtils.getConnection();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(
+                "DELETE FROM challenges " +
+                        "WHERE ID = ?")) {
+            preparedStatement.setLong(1, elem.getId());
+            int result = preparedStatement.executeUpdate();
+            logger.trace("deleted {} instances ", result);
+        } catch (SQLException e) {
+            logger.error(e);
+        }
         logger.traceExit();
     }
 
     @Override
     public void update(Challenge elem, Long id) {
         logger.traceEntry("updating challenge {} ", elem);
-        Session session = HibernateUtils.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
-        session.merge(elem);
-        transaction.commit();
-        session.close();
+        Connection connection = dbUtils.getConnection();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(
+                "UPDATE challenges " +
+                        "SET name = ?, groupAge = ?, numberOfParticipants = ? " +
+                        "WHERE id = ?")) {
+            preparedStatement.setString(1, elem.getName());
+            preparedStatement.setString(2, elem.getGroupAge());
+            preparedStatement.setInt(3, elem.getNumberOfParticipants());
+            preparedStatement.setLong(4, id);
+            int result = preparedStatement.executeUpdate();
+            logger.trace("updated {} instances ", result);
+        } catch (SQLException e) {
+            logger.error(e);
+        }
         logger.traceExit();
     }
 
     @Override
     public Challenge findById(Long id) {
         logger.traceEntry();
-        Session session = HibernateUtils.getSessionFactory().openSession();
-        Challenge challenge = session.get(Challenge.class, id);
-        session.close();
+        Connection connection = dbUtils.getConnection();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(
+                "SELECT * FROM challenges " +
+                        "WHERE id = ?")) {
+            preparedStatement.setLong(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if(resultSet.next())
+            {
+                String name = resultSet.getString(2);
+                String groupAge = resultSet.getString(3);
+                int numberOfParticipants = resultSet.getInt(4);
+                Challenge challenge = new Challenge(name, groupAge, numberOfParticipants);
+                challenge.setId(id);
+                return challenge;
+            }
+        } catch (SQLException e) {
+            logger.error(e);
+        }
         logger.traceExit();
-        return challenge;
-    }
-
-    public Challenge findByName(String name) {
-        logger.traceEntry();
-        Session session = HibernateUtils.getSessionFactory().openSession();
-        Query<Challenge> query = session.createQuery(
-                "FROM Challenge WHERE name = :name", Challenge.class
-        );
-        query.setParameter("name", name);
-        logger.traceExit();
-        session.close();
-        return query.uniqueResult();
+        return null;
     }
 
     @Override
     public Iterable<Challenge> findAll() {
         logger.traceEntry();
-        Session session = HibernateUtils.getSessionFactory().openSession();
-        Query<Challenge> query = session.createQuery("FROM Challenge", Challenge.class);
-        List<Challenge> challenges = query.list();
-        session.close();
+        Connection connection = dbUtils.getConnection();
+        List<Challenge> challengeList = new ArrayList<>();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(
+                "SELECT * FROM challenges")) {
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next())
+            {
+                Long id = resultSet.getLong(1);
+                String name = resultSet.getString(2);
+                String groupAge = resultSet.getString(3);
+                int numberOfParticipants = resultSet.getInt(4);
+                Challenge challenge = new Challenge(name, groupAge, numberOfParticipants);
+                challenge.setId(id);
+                challengeList.add(challenge);
+            }
+        } catch (SQLException e) {
+            logger.error(e);
+        }
         logger.traceExit();
-        return challenges;
+        return challengeList;
     }
 
     @Override
@@ -103,17 +155,49 @@ public class ChallengeDBRepository implements ChallengeRepository {
     @Override
     public Challenge getChallengeMatched(int age, String challengeName) {
         logger.traceEntry();
-        Session session = HibernateUtils.getSessionFactory().openSession();
-        Query<Challenge> query = session.createQuery(
-                "FROM Challenge WHERE name = :challengeName", Challenge.class
-        );
-        query.setParameter("challengeName", challengeName);
-        List<Challenge> challenges = query.list();
-        session.close();
-        for (Challenge challenge : challenges) {
-            if (challenge.matchAge(age)) {
+        Connection connection = dbUtils.getConnection();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(
+                "SELECT * FROM challenges " +
+                        "WHERE name = ?")) {
+            preparedStatement.setString(1, challengeName);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next())
+            {
+                Long id = resultSet.getLong(1);
+                String groupAge = resultSet.getString(3);
+                int numberOfParticipants = resultSet.getInt(4);
+                Challenge challenge = new Challenge(challengeName, groupAge, numberOfParticipants);
+                challenge.setId(id);
+                if(challenge.matchAge(age))
+                    return challenge;
+            }
+        } catch (SQLException e) {
+            logger.error(e);
+        }
+        logger.traceExit();
+        return null;
+    }
+
+    @Override
+    public Challenge findByName(String name) {
+        logger.traceEntry();
+        Connection connection = dbUtils.getConnection();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(
+                "SELECT * FROM challenges " +
+                        "WHERE name = ?")) {
+            preparedStatement.setString(1, name);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if(resultSet.next())
+            {
+                Long id = resultSet.getLong(1);
+                String groupAge = resultSet.getString(3);
+                int numberOfParticipants = resultSet.getInt(4);
+                Challenge challenge = new Challenge(name, groupAge, numberOfParticipants);
+                challenge.setId(id);
                 return challenge;
             }
+        } catch (SQLException e) {
+            logger.error(e);
         }
         logger.traceExit();
         return null;

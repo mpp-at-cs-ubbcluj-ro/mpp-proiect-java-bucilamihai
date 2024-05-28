@@ -23,6 +23,7 @@ dependencies {
     implementation 'org.hibernate:hibernate-core:6.4.4.Final'
 
     implementation("org.xerial:sqlite-jdbc:3.44.1.0")
+    implementation 'org.springframework:spring-context:5.3.14'
 }
 
 test {
